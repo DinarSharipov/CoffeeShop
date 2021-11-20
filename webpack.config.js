@@ -68,6 +68,10 @@ module.exports = {
           from: path.resolve(__dirname, 'src/favicon.ico'),
           to: path.resolve(__dirname, 'dist'),
         },
+        {
+          from: path.resolve(__dirname, 'src/img'),
+          to: path.resolve(__dirname, 'dist/img'),
+        },
       ],
     }),
     new MiniCssExtractPlugin({
@@ -83,13 +87,26 @@ module.exports = {
       // набор правил для очередного формата
       {
         test: /\.s[ac]ss$/i, // на какие форматы это правило распорстраняется? В данном случае SCSS SASS форматы будут преобразлованы в CSS
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'], // обработчики которые перелапачивают код так, чтобы его понимал webpack ВАЖНО! читает справа налево. SASS-LOADER и CSS-LOADER преобразуют в CSS а минисиэсэс соберет в файл
+        use: [
+          {
+            loader:MiniCssExtractPlugin.loader, 
+            options: {
+              publicPath: '',
+            }
+          }, 'css-loader', 'sass-loader'], // обработчики которые перелапачивают код так, чтобы его понимал webpack ВАЖНО! читает справа налево. SASS-LOADER и CSS-LOADER преобразуют в CSS а минисиэсэс соберет в файл
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: jsLoaders(),
       },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name]-[hash][ext]',
+        }
+     }
     ],
   },
 };
