@@ -1,0 +1,95 @@
+@import 'variables';
+@import 'mixins';
+
+.header {
+    background-image: url('../img/header/header_bg.jpg');
+  background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__wrapper {
+       padding: 166px 10px;
+    }
+
+    &__title {
+        @include RighteousFont();
+    }
+
+    &__text {
+        margin-top: 32px;
+        @include fontSettings(20px)
+    }
+
+    &__btns {
+        margin-top: 64px;
+       @include flexPosition(space-between);
+    }
+
+    &__btns-left {
+        @include button(24px, 40px);
+    }
+
+    &__btns-right {
+        transition: .5s;
+        height: 107px;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.05);
+            filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
+        }
+    }
+}
+
+@media (max-width: 1190px) {
+    .header{
+        &__wrapper{
+            padding: 40px 40px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+       
+        &__wrapper {
+           padding: 40px 20px;
+          text-align: center;
+          height: calc(100vh - 85px);
+          @include flexPosition(space-between);
+          flex-direction: column
+         
+        }
+
+        &__text{
+            flex-grow: 1;
+        }
+
+        &__btns {
+           justify-content: center;
+           flex-grow: 2;
+        }
+
+        &__btns-right {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .media-none{
+        display: none;
+    }
+    .header {
+        background-position: bottom right -250px;
+
+        &__wrapper {
+           padding: 40px 10px;
+          text-align: center;
+        }
+
+        &__title {
+            @include RighteousFont(36px);
+        }
+    }
+    
+}

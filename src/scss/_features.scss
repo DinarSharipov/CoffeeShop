@@ -1,0 +1,59 @@
+.features {
+   @include flexPosition(space-between);
+
+    &__item-title {
+        @include RighteousFont(24px, 29px);
+        &--num {
+            @include RighteousFont(24px, 29px, $projectBrown);
+        }
+    }
+
+    &__item-img {
+        margin-top: 24px;
+        overflow: hidden;
+        @include flexPosition(center);
+        flex-direction: column;
+        img{
+            margin: 0 auto;
+            width: 100%;
+               height: auto;
+            transition: 4s;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+@media (max-width: 1190px){
+    .features {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 20px;
+        &__item:not(:last-child){
+            margin-right: 10px;
+        }
+        &__item-title {
+            @include RighteousFont(20px, 24px);
+            &--num {
+                @include RighteousFont(20px, 24px, $projectBrown);
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 768px){
+    .features {
+        @include flexPosition(center);
+        flex-direction: column;
+      &__item{
+          text-align: center;
+      }
+        &__item:not(:last-child){
+            margin-bottom: 20px;
+            margin-right: 0;
+        }
+  
+    }
+}
