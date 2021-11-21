@@ -1,0 +1,49 @@
+@mixin fontSettings($fsz: 16px,$lh: 36px, $fw: 500, $color:#ffffff, $opacity: 1){
+    font-family: 'Urbanist';
+    font-size: $fsz;
+    font-weight: $fw;
+    color: $color;
+    opacity: $opacity;
+    line-height: $lh;
+}
+
+@mixin RighteousFont($fsz:48px, $lh:62px, $color:#ffffff ) {
+    font-family: Righteous;
+    font-weight: 400;
+    color: $color;
+    font-size: $fsz;
+    line-height: $lh;
+  
+}
+
+@mixin  InterFont($fsz: 18px, $lh: 22px) {
+    font-size: $fsz;
+    line-height: $lh;
+    color: #ffffff;
+    font-family: 'Inter';
+    
+}
+
+@mixin button($py:20px, $px:36px){
+    padding: $py $px;
+    font-family: 'Inter';
+    color: #ffffff;
+    background-color: $projectBrown;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        transition: 0.3s;
+        color: rgb(117, 60, 21);
+    }
+}
+
+@mixin flexPosition($jc:space-between, $fd: row){
+    display: flex;
+    align-items: center;
+    justify-content: $jc;
+    flex-direction: $fd;
+}
+

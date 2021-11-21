@@ -1,0 +1,106 @@
+@import "variables";
+@import "mixins";
+
+.nav {
+    background-color: $navBG;
+    @include InterFont();
+    a{
+        @include InterFont();
+    }
+
+    &__wrapper {
+        @include flexPosition();
+        height: $topHeight;
+        padding: 0 20px;
+    }
+
+    &__left {
+        @include flexPosition();
+        width: 397px;
+    }
+
+    &__right {
+        @include flexPosition();
+       width: 417px;
+    }
+    &__burger{
+        display: none;
+    }
+}
+
+@media (max-width: 960px){
+    .nav{
+        @include InterFont(16px, 16px);
+        a{
+            @include InterFont(16px, 16px);
+        }
+        &__left {
+            @include flexPosition(space-around);
+            max-width: 397px;
+        }
+    
+        &__right {
+            @include flexPosition(space-around);
+           max-width: 417px;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .nav{
+        &__wrapper {
+      
+            height: $topHeight - 40px;
+        }
+        @include InterFont(16px, 16px);
+        a{
+            @include InterFont(16px, 16px);
+        }
+        &__left {
+            @include flexPosition(space-around);
+            max-width: 300px;
+        }
+    
+        &__right {
+            @include flexPosition(space-around);
+           max-width: 300px;
+        }
+    }
+}
+
+@media (max-width: 700px){
+    .nav {
+
+    &__wrapper {
+      
+        height: $topHeight - 40px;
+    }
+
+    &__left {
+        @include flexPosition(center);
+        max-width: 397px;
+    }
+
+    &__right {
+        @include flexPosition(center);
+       max-width: 417px;
+    }
+
+    &__link{
+        display: none;
+    }
+
+    &__burger{
+        display: block;
+        font-size: 40px;
+    }
+
+    &__card{
+        font-size: 30px;
+    }
+    &__search{
+        display: none;
+    }
+}
+}
+

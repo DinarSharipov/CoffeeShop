@@ -1,0 +1,121 @@
+.history {
+    padding: 140px 0px 0 0;
+    display: flex;
+    div:not(:last-child){
+        margin-right: 32px;
+    }
+    img{
+        display: block;
+    }
+
+    &__left {
+        display:flex;
+        flex-direction: column;
+        img{
+            max-width: 298px;
+            max-height: 301px;
+        }
+        
+    }
+
+    &__img1{
+        margin-bottom: 32px;
+    }
+
+    &__center {
+    }
+
+    &__content {
+        padding: 120px 56px 0 56px;
+        background-color: $itemsBg;
+        @include RighteousFont(18px, 21px, $projectBrown)
+    }
+
+    &__content-title {
+        @include RighteousFont(48px, 62px);
+        margin-top: 12px;
+    }
+
+    &__content-text {
+        margin-top: 36px;
+        @include fontSettings()
+    }
+}
+
+@media (max-width: 1190px){
+    .history {
+        padding: 140px 20px;
+        display: flex;
+    }
+}
+
+@media (max-width: 1080px){
+    .history {
+        padding: 60px 20px;
+        &__left {
+            display:none;
+            
+        }
+    
+        &__content {
+           min-width: 375px;
+            padding: 40px 20px 40px 20px;
+           
+        }
+    }  
+}
+
+@media(max-width: 768px){
+    .history {
+        padding:60px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        div:not(:last-child){
+            margin-right: 0px;
+        }
+
+        &__center {
+           display: none;
+        }
+    
+        &__content {
+            min-width: 335px;
+            padding: 40px 20px 40px 20px;
+            text-align: center;
+        }
+        &__content-title {
+            @include RighteousFont(32px, 38px);
+            margin-top: 10px;
+        }
+    
+        &__content-text {
+            margin-top: 20px;
+            @include fontSettings(16px, 22px)
+        }
+    }
+    
+}
+
+@media(max-width: 375px){
+    .history {
+        padding:60px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        div:not(:last-child){
+            margin-right: 0px;
+        }
+
+        &__center {
+           display: none;
+        }
+    
+        &__content {
+            min-width: 335px;
+            padding: 30px 20px 30px 20px;
+            text-align: center;
+        }
+    }
+    
+}
