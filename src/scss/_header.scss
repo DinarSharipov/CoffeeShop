@@ -3,10 +3,10 @@
 
 .header {
     background-image: url('../img/header/header_bg.jpg');
-  background-position: bottom;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-
+    
     &__wrapper {
        padding: 166px 10px;
     }
@@ -80,7 +80,7 @@
         display: none;
     }
     .header {
-        background-position: bottom right -250px;
+        background-position: -700px ;
 
         &__wrapper {
            padding: 40px 10px;

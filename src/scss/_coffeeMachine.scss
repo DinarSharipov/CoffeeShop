@@ -1,0 +1,49 @@
+.accessories {
+    padding-top: 140px;
+}
+
+.coffee-machine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 72px 80px 84px 169px;
+    background-color: $itemsBg;
+
+		&__image {
+            display: block;
+		}
+
+		&__content {
+            max-width: 535px;
+            min-height: 372px;
+		}
+
+		&__content-title {
+            @include RighteousFont(48px, 62px);
+		}
+
+		&__content-text {
+            @include fontSettings(16px, 28px, 500);
+            margin-top: 36px;
+		}
+
+		&__content-btn {
+            margin-top: 36px;
+            @include button(20px, 36px)
+		}
+}
+
+@media (max-width: 1100px){
+    .coffee-machine {
+        flex-direction: column;
+        padding: 30px 30px 30px 30px;
+        &__content{
+            text-align: center;
+           }
+           &__content-title {
+            margin-top: 30px;
+            @include RighteousFont(32px, 40px);
+        }
+    }
+
+}
