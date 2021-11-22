@@ -1,0 +1,82 @@
+.menu {
+    padding-top: 140px;
+
+    &__header {
+        text-align: center;
+    }
+
+    &__title {
+        @include fontSettings(18px, 21px, 600, $projectBrown)
+    }
+
+    &__text {
+        @include RighteousFont(48px, 62px);
+        margin-top: 12px;
+    }
+
+    &__items {
+        padding: 0 20px;
+        margin-top: 56px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 36px;
+        justify-content: space-between;
+    }
+    .item {
+        @include flexPosition(space-between);
+        padding: 24px;
+        border: 1px solid #C4C4C4;
+    
+    
+        &__img {
+            width: 72px;
+            height: 72px;
+        }
+    
+        &__name {
+            @include RighteousFont(24px, 29px);
+            padding: 0 10px;
+        }
+    
+        &__price {
+            @include fontSettings(18px, 21px, 600, $projectBrown)
+        }
+    }
+}
+
+
+
+@media (max-width:768px) {
+    .menu{
+        padding-top: 40px;
+        &__text{
+            @include RighteousFont(22px, 28px);
+        }
+        &__items{
+            margin-top: 20px;
+        }
+        .item {
+            padding: 12px;
+        
+            &__name {
+                @include RighteousFont(18px, 22px);
+                padding: 0 10px;
+            }
+        
+            &__price {
+                @include fontSettings(18px, 21px, 600, $projectBrown)
+            }
+        }
+    }
+    
+
+   
+}
+
+@media (max-width:600px) {
+
+    .menu__items {
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
+}

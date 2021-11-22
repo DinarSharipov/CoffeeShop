@@ -43,6 +43,9 @@
     background-color: $mainBG;
     padding: 140px 0  72px 0;
 }
+.wrapper{
+    flex-grow: 1;
+}
 
 @media (max-width: 1190px){
     .main{

@@ -2,34 +2,30 @@
     padding-top: 140px;
     @include flexPosition(space-between);
     flex-direction: column;
-
-    // .popular-product__top
+    @media (max-width: 768px){
+        padding-top: 40px;
+    }
 
     &__top {
         text-align: center;
     }
 
-    // .popular-product__top-title
-
     &__top-title {
         @include fontSettings(18px, 22px, $projectBrown)
     }
 
-    // .popular-product__top-text
-
     &__top-text {
-        @include RighteousFont(48px ,62px)
+        @include RighteousFont(48px ,62px);
+        @media (max-width: 768px){
+            @include RighteousFont(28px ,32px)
+        }
     }
-
-    // .popular-product__items
 
     &__items {
         @include flexPosition(space-between);
         width: 100%;
         flex-wrap: wrap;
-        @media (max-width: 768px){
-            justify-content: center;
-        }
+        
     }
 
     &__btn{
@@ -49,46 +45,48 @@
     img{
         display: block;
     }
-  
-    // .product__content
 
     &__content {
         padding-top: 27px;
        @include flexPosition(space-between, column);
        height: 100%;
-
     }
-
-    // .product__content-rating
 
     &__content-rating {
         @include flexPosition(space-between);
         @include fontSettings(16px, 18px, 500, $projectBrown);
-
-        // .product__content-rating--stars
-
         &--stars {
+            margin-left: 12px;
         }
     }
-
-    // .product__content-name
 
     &__content-name {
         margin-top: 20px;
         @include RighteousFont(24px, 30px)
     }
 
-    // .product__content-price
-
     &__content-price {
         margin-top: 20px;
         @include fontSettings(18px, 22px, 400);
-
-        // .product__content-price--decor
-
         &--decor {
             @include fontSettings(18px, 22px, 400, $projectBrown);
            
         }
     }
+}
+
+@media (max-width: 1100px){
+   .popular-product{
+    padding-top: 40px;
+       &__items{
+        flex-direction: column;
+       }
+       &__top-title {
+        @include fontSettings(16px, 20px, $projectBrown)
+    }
+
+    &__top-text {
+        @include RighteousFont(32px ,40px);
+    }
+   }
 }
